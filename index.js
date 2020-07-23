@@ -2,15 +2,20 @@ var formisvalid = true;
 
 function atError(message) {
   var errorBox = document.querySelector(".alert");
+  var errorTxt = document.querySelector(".errorText");
+ 
+  // var titleAlert = document.querySelector(".headerAlert");
   errorBox.classList.contains("d-none") && errorBox.classList.toggle("d-none");
-  errorBox.innerHTML += "<p>" + message + "</p>";
+
+  errorTxt.innerHTML += "<p>" + message + "</p>";
 }
 
 const validate = e => {
   e.preventDefault();
   var errorBox = document.querySelector(".alert");
+  var errorTxt = document.querySelector(".errorText");
   !errorBox.classList.contains("d-none") && errorBox.classList.toggle("d-none");
-  errorBox.innerHTML = "";
+  errorTxt.innerHTML = "";
 
   document.querySelectorAll("input").forEach(function(items) {
     items.classList.remove("is-invalid");
